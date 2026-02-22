@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.pharmaconnect.ui.auth.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.pharmaconnect.ui.dashboard.DashboardFragment"
+        android:label="Dashboard" />
+
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.pharmaconnect.ui.inventory.InventoryFragment"
+        android:label="Inventory">
+        <action
+            android:id="@+id/action_inventoryFragment_to_medicineFormFragment"
+            app:destination="@id/medicineFormFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/medicineFormFragment"
+        android:name="com.pharmaconnect.ui.medicine.MedicineFormFragment"
+        android:label="Medicine Form">
+        <argument android:name="medicineId" app:argType="long" android:defaultValue="0" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.pharmaconnect.ui.orders.OrdersFragment"
+        android:label="Orders" />
+
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.pharmaconnect.ui.reports.ReportsFragment"
+        android:label="Reports" />
+</navigation>
